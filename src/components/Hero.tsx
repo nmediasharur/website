@@ -62,7 +62,7 @@ export function Hero() {
           </motion.div>
         </motion.div>
 
-        {/* 3D Floating Logo - Right Side */}
+        {/* 3D Floating Video Animation - Right Side */}
         <motion.div 
           initial={{ opacity: 0, scale: 0.8 }}
           animate={{ opacity: 1, scale: 1 }}
@@ -72,14 +72,15 @@ export function Hero() {
           <motion.div
             animate={{ y: [0, -20, 0] }}
             transition={{ repeat: Infinity, duration: 4, ease: "easeInOut" }}
-            className="relative w-[300px] h-[300px] md:w-[450px] md:h-[450px] lg:w-[600px] lg:h-[600px] z-10 filter drop-shadow-[0_0_30px_rgba(255,0,0,0.3)]"
+            className="relative w-[300px] h-[300px] md:w-[450px] md:h-[450px] lg:w-[600px] lg:h-[600px] z-10 filter drop-shadow-[0_0_30px_rgba(255,0,0,0.3)] rounded-2xl overflow-hidden"
           >
-            <Image
-              src="/asset/logo-updated.png"
-              alt="Hero Logo"
-              fill
-              className="object-contain"
-              priority
+            <video 
+              src="/asset/hero-animation.mp4"
+              autoPlay
+              loop
+              muted
+              playsInline
+              className="w-full h-full object-cover md:object-contain pointer-events-none mix-blend-screen"
             />
           </motion.div>
         </motion.div>
