@@ -14,31 +14,18 @@ export function Hero() {
       <div className="absolute inset-0 z-0 bg-black flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(255,0,0,0.15)_0,rgba(0,0,0,1)_50%)] z-10" />
         
-        {/* Giant Background Logo */}
-        <motion.div 
-          initial={{ scale: 0.8, opacity: 0 }}
-          animate={{ scale: 1, opacity: 0.4 }}
-          transition={{ duration: 2, ease: "easeOut" }}
-          className="absolute w-[800px] h-[800px] md:w-[1200px] md:h-[1200px] z-0 mix-blend-screen pointer-events-none flex items-center justify-center"
-        >
-          <Image
-            src="/asset/logo-updated.png"
-            alt="Background Logo"
-            fill
-            className="object-contain"
-          />
-        </motion.div>
-
         <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-red-600/20 rounded-full blur-[120px] animate-pulse z-10" />
         <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-red-800/20 rounded-full blur-[120px] animate-pulse z-10" style={{ animationDelay: "2s" }} />
       </div>
 
-      <div className="container relative z-20 px-4 md:px-6 flex flex-col items-center text-center">
+      <div className="container relative z-20 px-4 md:px-6 flex flex-col lg:flex-row items-center justify-between gap-12 lg:gap-8">
+        
+        {/* Text Content - Left Side */}
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
+          initial={{ opacity: 0, x: -30 }}
+          animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
-          className="max-w-4xl"
+          className="max-w-2xl text-center lg:text-left lg:w-1/2 pt-10 lg:pt-0"
         >
           <h1 className="text-4xl md:text-6xl lg:text-7xl font-extrabold tracking-tight mb-6">
             <span className="text-white">Reels Starting from just </span>
@@ -49,7 +36,7 @@ export function Hero() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.3, duration: 0.8 }}
-            className="text-lg md:text-2xl text-white/70 mb-10 max-w-2xl mx-auto font-light"
+            className="text-lg md:text-2xl text-white/70 mb-10 max-w-xl mx-auto lg:mx-0 font-light"
           >
             Your Elite Digital Marketing Partner. <br className="hidden md:block" /> We don't just run ads; we build empires.
           </motion.p>
@@ -58,7 +45,7 @@ export function Hero() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.6, duration: 0.5 }}
-            className="flex flex-col sm:flex-row items-center justify-center gap-4"
+            className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4"
           >
             <Link 
               href="#contact" 
@@ -72,6 +59,28 @@ export function Hero() {
             >
               View Pricing
             </Link>
+          </motion.div>
+        </motion.div>
+
+        {/* 3D Floating Logo - Right Side */}
+        <motion.div 
+          initial={{ opacity: 0, scale: 0.8 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 1, delay: 0.2 }}
+          className="lg:w-1/2 w-full flex justify-center lg:justify-end relative"
+        >
+          <motion.div
+            animate={{ y: [0, -20, 0] }}
+            transition={{ repeat: Infinity, duration: 4, ease: "easeInOut" }}
+            className="relative w-[300px] h-[300px] md:w-[450px] md:h-[450px] lg:w-[600px] lg:h-[600px] z-10 filter drop-shadow-[0_0_30px_rgba(255,0,0,0.3)]"
+          >
+            <Image
+              src="/asset/logo-updated.png"
+              alt="Hero Logo"
+              fill
+              className="object-contain"
+              priority
+            />
           </motion.div>
         </motion.div>
       </div>
