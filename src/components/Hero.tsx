@@ -18,18 +18,18 @@ export function Hero() {
         <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-red-800/20 rounded-full blur-[120px] animate-pulse z-10" style={{ animationDelay: "2s" }} />
       </div>
 
-      <div className="container relative z-20 px-4 md:px-6 flex flex-col lg:flex-row items-center justify-between gap-12 lg:gap-8">
+      <div className="container relative z-20 px-4 md:px-6 flex flex-col-reverse lg:flex-row items-center justify-between gap-12 lg:gap-8 pt-8 lg:pt-0">
         
         {/* Text Content - Left Side */}
         <motion.div
           initial={{ opacity: 0, x: -30 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
-          className="max-w-2xl text-center lg:text-left lg:w-1/2 pt-10 lg:pt-0"
+          className="max-w-2xl text-center lg:text-left lg:w-1/2 pt-4 lg:pt-0"
         >
           <h1 className="text-4xl md:text-6xl lg:text-7xl font-extrabold tracking-tight mb-6">
             <span className="text-white">Reels Starting from just </span>
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-red-500 to-red-800 glow-text">₹99</span>
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-red-500 to-red-800 glow-text">₹999</span>
           </h1>
           
           <motion.p 
@@ -64,28 +64,21 @@ export function Hero() {
 
         {/* 3D Floating Logo Animation - Right Side */}
         <motion.div 
-          initial={{ opacity: 0, scale: 3, filter: "blur(20px) brightness(2)" }}
-          animate={{ opacity: 1, scale: 1, filter: "blur(0px) brightness(1)" }}
-          transition={{ duration: 1.5, ease: [0.16, 1, 0.3, 1] }} // Dramatic custom easing
-          className="lg:w-1/2 w-full flex justify-center lg:justify-end relative mt-12 lg:mt-0"
+          initial={{ opacity: 0, scale: 1.5 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1] }} // Dramatic custom easing without heavy filters
+          className="lg:w-1/2 w-full flex justify-center lg:justify-end relative mt-0 lg:mt-0"
         >
           {/* Animated Glow Behind Logo */}
           <motion.div
             initial={{ scale: 0, opacity: 0 }}
             animate={{ 
-              scale: [0, 2, 1.2, 1],
-              opacity: [0, 0.8, 0.2, 0.5],
+              scale: [0, 1.5, 1],
+              opacity: [0, 0.5, 0.3],
             }}
-            transition={{ duration: 2, times: [0, 0.3, 0.6, 1], ease: "easeOut" }}
-            className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[300px] h-[300px] lg:w-[500px] lg:h-[500px] bg-red-600 rounded-full blur-[100px] z-0"
-          >
-            {/* Continuous subtle pulse after initial burst */}
-            <motion.div
-               animate={{ scale: [1, 1.1, 1], opacity: [0.5, 0.3, 0.5] }}
-               transition={{ repeat: Infinity, duration: 4, ease: "easeInOut", delay: 2 }}
-               className="w-full h-full rounded-full bg-red-600/50 blur-[50px]"
-            />
-          </motion.div>
+            transition={{ duration: 2, times: [0, 0.4, 1], ease: "easeOut" }}
+            className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[250px] h-[250px] lg:w-[500px] lg:h-[500px] bg-red-600 rounded-full blur-[60px] lg:blur-[80px] z-0"
+          />
 
           {/* Logo Animation */}
           <motion.div
