@@ -75,7 +75,11 @@ export function ContactForm() {
                 </div>
                 <div>
                   <h4 className="text-white font-bold text-xl mb-2">Call Us</h4>
-                  <p className="text-red-500">+91 98765 43210</p>
+                  <p className="text-red-500">+91 90424 10169</p>
+                </div>
+                <div>
+                  <h4 className="text-white font-bold text-xl mb-2">Location</h4>
+                  <p className="text-red-500">Harur</p>
                 </div>
               </div>
             </motion.div>

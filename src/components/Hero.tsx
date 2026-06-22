@@ -5,19 +5,35 @@ import { buttonVariants } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
+import Image from "next/image";
 
 export function Hero() {
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20">
       {/* Background Effects */}
-      <div className="absolute inset-0 z-0 bg-black">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(255,0,0,0.15)_0,rgba(0,0,0,1)_50%)]" />
-        {/* Particle effect placeholder - in a real app we'd use a canvas particle system like tsParticles */}
-        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-red-600/20 rounded-full blur-[120px] animate-pulse" />
-        <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-red-800/20 rounded-full blur-[120px] animate-pulse" style={{ animationDelay: "2s" }} />
+      <div className="absolute inset-0 z-0 bg-black flex items-center justify-center overflow-hidden">
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(255,0,0,0.15)_0,rgba(0,0,0,1)_50%)] z-10" />
+        
+        {/* Giant Background Logo */}
+        <motion.div 
+          initial={{ scale: 0.8, opacity: 0 }}
+          animate={{ scale: 1, opacity: 0.05 }}
+          transition={{ duration: 2, ease: "easeOut" }}
+          className="absolute w-[800px] h-[800px] md:w-[1200px] md:h-[1200px] z-0 mix-blend-screen pointer-events-none flex items-center justify-center"
+        >
+          <Image
+            src="/asset/8ba73fe2-1f33-4ec1-961b-218c5fd95f0f.png"
+            alt="Background Logo"
+            fill
+            className="object-contain"
+          />
+        </motion.div>
+
+        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-red-600/20 rounded-full blur-[120px] animate-pulse z-10" />
+        <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-red-800/20 rounded-full blur-[120px] animate-pulse z-10" style={{ animationDelay: "2s" }} />
       </div>
 
-      <div className="container relative z-10 px-4 md:px-6 flex flex-col items-center text-center">
+      <div className="container relative z-20 px-4 md:px-6 flex flex-col items-center text-center">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
@@ -36,7 +52,7 @@ export function Hero() {
             transition={{ delay: 0.3, duration: 0.8 }}
             className="text-lg md:text-2xl text-white/70 mb-10 max-w-2xl mx-auto font-light"
           >
-            Digital marketing systems built for brands that want growth, not vanity.
+            Your Elite Digital Marketing Partner. <br className="hidden md:block" /> We don't just run ads; we build empires.
           </motion.p>
           
           <motion.div 

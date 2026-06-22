@@ -5,10 +5,10 @@ import { motion } from "framer-motion";
 
 // These would normally come from the admin dashboard (Supabase or local JSON)
 const defaultReels = [
-  "https://www.instagram.com/p/C-0z928P1Lh", // Example reel IDs
-  "https://www.instagram.com/p/C-0z928P1Lh",
-  "https://www.instagram.com/p/C-0z928P1Lh",
-  "https://www.instagram.com/p/C-0z928P1Lh",
+  "https://www.instagram.com/hello_harur/reel/DZ4z_bmNUGG/", 
+  "https://www.instagram.com/rfc_harur/reel/DZ2lDY3pnc2/",
+  "https://www.instagram.com/hello_harur/reel/DZ4z_bmNUGG/", 
+  "https://www.instagram.com/rfc_harur/reel/DZ2lDY3pnc2/",
 ];
 
 export function ReelShowcase() {
