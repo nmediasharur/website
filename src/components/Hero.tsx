@@ -22,7 +22,7 @@ export function Hero() {
           className="absolute w-[800px] h-[800px] md:w-[1200px] md:h-[1200px] z-0 mix-blend-screen pointer-events-none flex items-center justify-center"
         >
           <Image
-            src="/asset/8ba73fe2-1f33-4ec1-961b-218c5fd95f0f.png"
+            src="/asset/8354c672-383e-4e23-9799-968b17624926.png"
             alt="Background Logo"
             fill
             className="object-contain"
