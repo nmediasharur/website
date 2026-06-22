@@ -24,8 +24,9 @@ export function ReelShowcase() {
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {reels.map((url, i) => {
-            // Extract the post ID to create the embed URL
-            const embedUrl = url.endsWith('/') ? `${url}embed` : `${url}/embed`;
+            // Extract the post ID to create a safe embed URL without the username
+            const match = url.match(/(?:reel|p)\/([a-zA-Z0-9_-]+)/);
+            const embedUrl = match ? `https://www.instagram.com/p/${match[1]}/embed` : (url.endsWith('/') ? `${url}embed` : `${url}/embed`);
             
             return (
               <motion.div
