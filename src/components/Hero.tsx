@@ -62,25 +62,38 @@ export function Hero() {
           </motion.div>
         </motion.div>
 
-        {/* 3D Floating Video Animation - Right Side */}
+        {/* 3D Floating Logo Animation - Right Side */}
         <motion.div 
-          initial={{ opacity: 0, scale: 0.8 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 1, delay: 0.2 }}
-          className="lg:w-1/2 w-full flex justify-center lg:justify-end relative"
+          initial={{ opacity: 0, x: 50 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 1, delay: 0.2, ease: "easeOut" }}
+          className="lg:w-1/2 w-full flex justify-center lg:justify-end relative mt-12 lg:mt-0"
         >
+          {/* Animated Glow Behind Logo */}
           <motion.div
-            animate={{ y: [0, -20, 0] }}
+            animate={{ 
+              scale: [1, 1.2, 1],
+              opacity: [0.2, 0.5, 0.2],
+            }}
             transition={{ repeat: Infinity, duration: 4, ease: "easeInOut" }}
-            className="relative w-[300px] h-[300px] md:w-[450px] md:h-[450px] lg:w-[600px] lg:h-[600px] z-10 filter drop-shadow-[0_0_30px_rgba(255,0,0,0.3)] rounded-2xl overflow-hidden"
+            className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[300px] h-[300px] lg:w-[500px] lg:h-[500px] bg-red-600/40 rounded-full blur-[100px] z-0"
+          />
+
+          {/* Logo Animation */}
+          <motion.div
+            animate={{ 
+              y: [0, -20, 0],
+              rotateZ: [0, 2, -2, 0],
+            }}
+            transition={{ repeat: Infinity, duration: 6, ease: "easeInOut" }}
+            className="relative w-[300px] h-[300px] md:w-[450px] md:h-[450px] lg:w-[600px] lg:h-[600px] z-10 drop-shadow-[0_0_20px_rgba(255,0,0,0.5)]"
           >
-            <video 
-              src="/asset/hero-animation.mp4"
-              autoPlay
-              loop
-              muted
-              playsInline
-              className="w-full h-full object-cover md:object-contain pointer-events-none mix-blend-screen"
+            <Image
+              src="/asset/logo-updated.png"
+              alt="Hero Logo"
+              fill
+              className="object-contain"
+              priority
             />
           </motion.div>
         </motion.div>
