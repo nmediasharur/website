@@ -33,7 +33,7 @@ const services = [
     icon: <Palette className="h-10 w-10 text-red-500" />,
   },
   {
-    title: "SEO",
+    title: "Eye catching poster",
     description: "Dominate search rankings and capture high-intent organic traffic sustainably.",
     icon: <Search className="h-10 w-10 text-red-500" />,
   },
@@ -64,7 +64,7 @@ export function Services() {
     <section id="services" className="py-24 bg-black relative">
       <div className="container px-4 md:px-6 mx-auto relative z-10">
         <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-5xl font-bold mb-4">Our <span className="text-red-500">Arsenal</span></h2>
+          <h2 className="text-3xl md:text-5xl font-bold mb-4">Our <span className="text-red-500">Services</span></h2>
           <p className="text-white/60 max-w-2xl mx-auto text-lg">We don't do cookie-cutter. Every service is a weapon designed to dominate your market.</p>
         </div>
 
