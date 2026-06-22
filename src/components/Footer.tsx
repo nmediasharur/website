@@ -60,7 +60,17 @@ export function Footer() {
             Copyright © 2026 N MEDIA. All Rights Reserved.
           </p>
           <div className="text-white/40 text-sm text-center md:text-right">
-            <p>Developed and Managed by N MEDIA</p>
+            <p>
+              Developed and Managed by{" "}
+              <a 
+                href="https://www.linkedin.com/in/hemapriyan-rk/" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="text-white font-medium hover:text-red-500 transition-colors hover:underline"
+              >
+                HEMAPRIYAN R K (QenBel Technologies)
+              </a>
+            </p>
             <p className="text-[10px] mt-1">* Disclaimer: Prices may vary depending on project requirements.</p>
           </div>
         </div>
