@@ -17,7 +17,7 @@ export function Hero() {
         {/* Giant Background Logo */}
         <motion.div 
           initial={{ scale: 0.8, opacity: 0 }}
-          animate={{ scale: 1, opacity: 0.05 }}
+          animate={{ scale: 1, opacity: 0.2 }}
           transition={{ duration: 2, ease: "easeOut" }}
           className="absolute w-[800px] h-[800px] md:w-[1200px] md:h-[1200px] z-0 mix-blend-screen pointer-events-none flex items-center justify-center"
         >

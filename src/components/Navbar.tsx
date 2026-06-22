@@ -41,9 +41,9 @@ export function Navbar() {
           <Image
             src="/asset/8354c672-383e-4e23-9799-968b17624926.png"
             alt="N MEDIA Logo"
-            width={240}
-            height={80}
-            className="h-16 md:h-20 w-auto object-contain"
+            width={480}
+            height={160}
+            className="h-32 md:h-40 w-auto object-contain"
           />
         </Link>
 
