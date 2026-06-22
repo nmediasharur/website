@@ -43,7 +43,7 @@ export function Navbar() {
             alt="N MEDIA Logo"
             width={240}
             height={80}
-            className="h-10 md:h-16 w-auto object-contain scale-[1.5] md:scale-[2] origin-left"
+            className="h-10 md:h-16 w-auto object-contain scale-[2.5] md:scale-[2] origin-left"
           />
         </Link>
 
