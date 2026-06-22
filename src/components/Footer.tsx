@@ -14,9 +14,9 @@ export function Footer() {
               <Image
                 src="/asset/8ba73fe2-1f33-4ec1-961b-218c5fd95f0f.png"
                 alt="N MEDIA Logo"
-                width={150}
-                height={50}
-                className="h-12 w-auto object-contain"
+                width={300}
+                height={100}
+                className="h-20 md:h-24 w-auto object-contain"
               />
             </Link>
             <p className="text-white/60 max-w-sm mb-8">
