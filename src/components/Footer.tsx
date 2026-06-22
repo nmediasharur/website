@@ -26,7 +26,7 @@ export function Footer() {
               <a href="https://www.instagram.com/n_medias.in" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-white/80 hover:bg-red-600 hover:text-white transition-colors">
                 <Camera size={20} />
               </a>
-              <a href="mailto:hello@nmedia.agency" className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-white/80 hover:bg-red-600 hover:text-white transition-colors">
+              <a href="mailto:nmediasharur@gmail.com" className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-white/80 hover:bg-red-600 hover:text-white transition-colors">
                 <Mail size={20} />
               </a>
               <a href="tel:+919042410169" className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-white/80 hover:bg-red-600 hover:text-white transition-colors">

@@ -71,7 +71,7 @@ export function ContactForm() {
               <div className="space-y-6">
                 <div>
                   <h4 className="text-white font-bold text-xl mb-2">Email Us</h4>
-                  <p className="text-red-500">hello@nmedia.agency</p>
+                  <p className="text-red-500">nmediasharur@gmail.com</p>
                 </div>
                 <div>
                   <h4 className="text-white font-bold text-xl mb-2">Call Us</h4>
