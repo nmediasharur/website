@@ -77,7 +77,7 @@ export function Hero() {
               opacity: [0, 0.5, 0.3],
             }}
             transition={{ duration: 2, times: [0, 0.4, 1], ease: "easeOut" }}
-            className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[250px] h-[250px] lg:w-[500px] lg:h-[500px] bg-red-600 rounded-full blur-[60px] lg:blur-[80px] z-0"
+            className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[150px] h-[150px] md:w-[250px] md:h-[250px] lg:w-[500px] lg:h-[500px] bg-red-600 rounded-full blur-[40px] lg:blur-[80px] z-0"
           />
 
           {/* Logo Animation */}
@@ -91,7 +91,7 @@ export function Hero() {
               y: { repeat: Infinity, duration: 6, ease: "easeInOut" },
               rotateZ: { repeat: Infinity, duration: 8, ease: "easeInOut" } 
             }}
-            className="relative w-[300px] h-[300px] md:w-[450px] md:h-[450px] lg:w-[600px] lg:h-[600px] z-10 drop-shadow-[0_0_20px_rgba(255,0,0,0.8)]"
+            className="relative w-[200px] h-[200px] md:w-[350px] md:h-[350px] lg:w-[600px] lg:h-[600px] z-10 drop-shadow-[0_0_20px_rgba(255,0,0,0.8)]"
           >
             <Image
               src="/asset/logo-updated.png"
