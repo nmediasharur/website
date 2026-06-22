@@ -22,7 +22,7 @@ export function Hero() {
           className="absolute w-[800px] h-[800px] md:w-[1200px] md:h-[1200px] z-0 mix-blend-screen pointer-events-none flex items-center justify-center"
         >
           <Image
-            src="/asset/8354c672-383e-4e23-9799-968b17624926.png"
+            src="/asset/logo-updated.png"
             alt="Background Logo"
             fill
             className="object-contain"
@@ -40,10 +40,9 @@ export function Hero() {
           transition={{ duration: 0.8, ease: "easeOut" }}
           className="max-w-4xl"
         >
-          <h1 className="text-5xl md:text-7xl lg:text-8xl font-extrabold tracking-tight mb-6">
-            <span className="text-white">Scale. </span>
-            <span className="text-white">Convert. </span>
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-red-500 to-red-800 glow-text">Dominate.</span>
+          <h1 className="text-4xl md:text-6xl lg:text-7xl font-extrabold tracking-tight mb-6">
+            <span className="text-white">Reels Starting from just </span>
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-red-500 to-red-800 glow-text">₹99</span>
           </h1>
           
           <motion.p 

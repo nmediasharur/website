@@ -12,7 +12,7 @@ export function Footer() {
           <div className="md:col-span-2">
             <Link href="/" className="inline-block mb-6">
               <Image
-                src="/asset/8354c672-383e-4e23-9799-968b17624926.png"
+                src="/asset/logo-updated.png"
                 alt="N MEDIA Logo"
                 width={300}
                 height={100}

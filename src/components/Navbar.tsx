@@ -39,7 +39,7 @@ export function Navbar() {
       <div className="container mx-auto px-4 md:px-6 flex items-center justify-between">
         <Link href="/" className="flex items-center gap-2">
           <Image
-            src="/asset/8354c672-383e-4e23-9799-968b17624926.png"
+            src="/asset/logo-updated.png"
             alt="N MEDIA Logo"
             width={240}
             height={80}
