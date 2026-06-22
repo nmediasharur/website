@@ -13,6 +13,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://nmedia.vercel.app"),
   title: "N MEDIA | Scale. Convert. Dominate.",
   description: "Digital marketing systems built for brands that want growth, not vanity. We specialize in Social Media Management, Paid Ads, SEO, and Content Production.",
   openGraph: {
