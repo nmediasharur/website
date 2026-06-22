@@ -64,29 +64,41 @@ export function Hero() {
 
         {/* 3D Floating Logo Animation - Right Side */}
         <motion.div 
-          initial={{ opacity: 0, x: 50 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 1, delay: 0.2, ease: "easeOut" }}
+          initial={{ opacity: 0, scale: 3, filter: "blur(20px) brightness(2)" }}
+          animate={{ opacity: 1, scale: 1, filter: "blur(0px) brightness(1)" }}
+          transition={{ duration: 1.5, ease: [0.16, 1, 0.3, 1] }} // Dramatic custom easing
           className="lg:w-1/2 w-full flex justify-center lg:justify-end relative mt-12 lg:mt-0"
         >
           {/* Animated Glow Behind Logo */}
           <motion.div
+            initial={{ scale: 0, opacity: 0 }}
             animate={{ 
-              scale: [1, 1.2, 1],
-              opacity: [0.2, 0.5, 0.2],
+              scale: [0, 2, 1.2, 1],
+              opacity: [0, 0.8, 0.2, 0.5],
             }}
-            transition={{ repeat: Infinity, duration: 4, ease: "easeInOut" }}
-            className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[300px] h-[300px] lg:w-[500px] lg:h-[500px] bg-red-600/40 rounded-full blur-[100px] z-0"
-          />
+            transition={{ duration: 2, times: [0, 0.3, 0.6, 1], ease: "easeOut" }}
+            className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[300px] h-[300px] lg:w-[500px] lg:h-[500px] bg-red-600 rounded-full blur-[100px] z-0"
+          >
+            {/* Continuous subtle pulse after initial burst */}
+            <motion.div
+               animate={{ scale: [1, 1.1, 1], opacity: [0.5, 0.3, 0.5] }}
+               transition={{ repeat: Infinity, duration: 4, ease: "easeInOut", delay: 2 }}
+               className="w-full h-full rounded-full bg-red-600/50 blur-[50px]"
+            />
+          </motion.div>
 
           {/* Logo Animation */}
           <motion.div
+            initial={{ rotateZ: -10 }}
             animate={{ 
               y: [0, -20, 0],
               rotateZ: [0, 2, -2, 0],
             }}
-            transition={{ repeat: Infinity, duration: 6, ease: "easeInOut" }}
-            className="relative w-[300px] h-[300px] md:w-[450px] md:h-[450px] lg:w-[600px] lg:h-[600px] z-10 drop-shadow-[0_0_20px_rgba(255,0,0,0.5)]"
+            transition={{ 
+              y: { repeat: Infinity, duration: 6, ease: "easeInOut" },
+              rotateZ: { repeat: Infinity, duration: 8, ease: "easeInOut" } 
+            }}
+            className="relative w-[300px] h-[300px] md:w-[450px] md:h-[450px] lg:w-[600px] lg:h-[600px] z-10 drop-shadow-[0_0_20px_rgba(255,0,0,0.8)]"
           >
             <Image
               src="/asset/logo-updated.png"
