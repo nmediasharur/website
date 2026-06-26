@@ -1,12 +1,20 @@
 "use client";
 
 import { useRouter } from "next/navigation";
+import Image from "next/image";
 
 export default function MaintenancePage() {
   const router = useRouter();
   
   return (
     <div className="min-h-screen bg-black flex flex-col items-center justify-center p-4 text-center">
+      <Image
+        src="/asset/logo-updated.png"
+        alt="N MEDIA Logo"
+        width={300}
+        height={100}
+        className="h-20 md:h-24 w-auto object-contain mb-8"
+      />
       <h1 className="text-4xl md:text-6xl font-bold text-white mb-4">
         We'll be back soon!
       </h1>
