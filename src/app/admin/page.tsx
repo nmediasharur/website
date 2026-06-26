@@ -1,12 +1,13 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
+import { toast } from "sonner";
 
 const MOCK_LEADS = [
   { id: 1, name: "Rahul M.", business: "Urban Fitness", email: "rahul@example.com", service: "Paid Ads", status: "New", date: "2026-06-20" },
@@ -15,6 +16,40 @@ const MOCK_LEADS = [
 
 export default function AdminDashboard() {
   const [leads] = useState(MOCK_LEADS);
+  const [maintenanceMode, setMaintenanceMode] = useState(false);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    fetch("/api/admin")
+      .then((res) => res.json())
+      .then((data) => {
+        setMaintenanceMode(data.maintenanceMode || false);
+        setLoading(false);
+      })
+      .catch((err) => {
+        console.error(err);
+        setLoading(false);
+      });
+  }, []);
+
+  const toggleMaintenance = async () => {
+    const newValue = !maintenanceMode;
+    try {
+      const res = await fetch("/api/admin", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ maintenanceMode: newValue }),
+      });
+      if (res.ok) {
+        setMaintenanceMode(newValue);
+        toast.success(`Maintenance mode ${newValue ? "enabled" : "disabled"}`);
+      } else {
+        toast.error("Failed to update maintenance mode");
+      }
+    } catch (err) {
+      toast.error("An error occurred");
+    }
+  };
 
   return (
     <div className="space-y-6">
@@ -23,13 +58,38 @@ export default function AdminDashboard() {
         <p className="text-white/60">Manage your website content and leads.</p>
       </div>
 
-      <Tabs defaultValue="leads" className="space-y-6">
+      <Tabs defaultValue="overview" className="space-y-6">
         <TabsList className="bg-white/5 border border-white/10">
+          <TabsTrigger value="overview" className="data-[state=active]:bg-red-600 data-[state=active]:text-white">Overview</TabsTrigger>
           <TabsTrigger value="leads" className="data-[state=active]:bg-red-600 data-[state=active]:text-white">Leads CRM</TabsTrigger>
           <TabsTrigger value="pricing" className="data-[state=active]:bg-red-600 data-[state=active]:text-white">Pricing</TabsTrigger>
           <TabsTrigger value="reels" className="data-[state=active]:bg-red-600 data-[state=active]:text-white">Instagram Reels</TabsTrigger>
           <TabsTrigger value="testimonials" className="data-[state=active]:bg-red-600 data-[state=active]:text-white">Testimonials</TabsTrigger>
         </TabsList>
+
+        <TabsContent value="overview" className="space-y-4">
+          <Card className="bg-black border-white/10 text-white">
+            <CardHeader>
+              <CardTitle>Site Controls</CardTitle>
+              <CardDescription className="text-white/60">Manage global website settings.</CardDescription>
+            </CardHeader>
+            <CardContent>
+              <div className="flex items-center justify-between p-4 border border-white/10 rounded-lg">
+                <div>
+                  <h4 className="font-medium">Maintenance Mode</h4>
+                  <p className="text-sm text-white/60">Turn off public access to the website.</p>
+                </div>
+                <Button 
+                  onClick={toggleMaintenance} 
+                  disabled={loading}
+                  variant={maintenanceMode ? "destructive" : "secondary"}
+                >
+                  {maintenanceMode ? "Disable Maintenance" : "Enable Maintenance"}
+                </Button>
+              </div>
+            </CardContent>
+          </Card>
+        </TabsContent>
 
         <TabsContent value="leads" className="space-y-4">
           <Card className="bg-black border-white/10 text-white">
