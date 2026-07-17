@@ -16,14 +16,12 @@ export function Footer() {
           <div className="md:col-span-2">
             <p className="mb-4 text-sm text-white/80">
               Developed and Managed by{" "}
-              <a 
-                href="https://www.linkedin.com/in/hemapriyan-rk/" 
-                target="_blank" 
-                rel="noopener noreferrer"
+              <Link 
+                href="/developer" 
                 className="text-white font-medium hover:text-red-500 transition-colors hover:underline"
               >
                 HEMAPRIYAN R K (QenBel Technologies)
-              </a>
+              </Link>
             </p>
             <Link href="/" className="inline-block mb-6">
               <Image
