@@ -1,8 +1,26 @@
+"use client";
+
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowLeft, Code, Link2, Mail } from "lucide-react";
+import { useState, useEffect } from "react";
+import styles from "./developer.module.css";
+import { ArrowLeft } from "lucide-react";
 
 export default function DeveloperPage() {
+  const [theme, setTheme] = useState("dark");
+
+  useEffect(() => {
+    // Default to dark since nmedias is dark theme
+    const savedTheme = localStorage.getItem("portfolio-theme") || "dark";
+    setTheme(savedTheme);
+  }, []);
+
+  const toggleTheme = () => {
+    const newTheme = theme === "light" ? "dark" : "light";
+    setTheme(newTheme);
+    localStorage.setItem("portfolio-theme", newTheme);
+  };
+
   const skills = [
     "Python", "Java", "JavaFX", "C", "C++", "SQL", "Postgres SQL", 
     "Networking", "Basic Cybersecurity", "Git", "GitHub", "Machine Learning", 
@@ -11,88 +29,62 @@ export default function DeveloperPage() {
   ];
 
   return (
-    <div className="min-h-screen bg-black text-white selection:bg-red-500 selection:text-white pb-20">
-      <div className="container mx-auto px-4 pt-12 md:pt-24 max-w-4xl">
-        <Link 
-          href="/"
-          className="inline-flex items-center text-white/60 hover:text-red-500 transition-colors mb-12 group"
-        >
-          <ArrowLeft className="mr-2 h-4 w-4 group-hover:-translate-x-1 transition-transform" />
-          Back to Home
-        </Link>
-        
-        <div className="grid md:grid-cols-[1fr_2fr] gap-12 items-start">
-          {/* Profile Image Section */}
-          <div className="relative group">
-            <div className="absolute -inset-1 bg-gradient-to-r from-red-600 to-red-900 rounded-2xl blur opacity-25 group-hover:opacity-50 transition duration-1000 group-hover:duration-200"></div>
-            <div className="relative aspect-square rounded-2xl overflow-hidden border border-white/10 bg-zinc-900">
-              <Image 
-                src="/asset/profile.jpeg" 
-                alt="Hemapriyan R K" 
-                fill
-                className="object-cover"
-                priority
-              />
+    <div className={styles.themeWrapper} data-theme={theme}>
+      <div className={styles.container}>
+        {/* Back and Theme Toggle Nav */}
+        <nav className={styles.navHeader} style={{ justifyContent: "space-between" }}>
+          <Link href="/" style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', opacity: 0.7 }}>
+            <ArrowLeft size={16} />
+            Back to Home
+          </Link>
+          <button onClick={toggleTheme} className={styles.themeToggle} aria-label="Toggle theme">
+            {theme === "light" ? (
+              <><span>☾</span> Dark Mode</>
+            ) : (
+              <><span>☀</span> Light Mode</>
+            )}
+          </button>
+        </nav>
+
+        {/* Header / Hero */}
+        <header className={`${styles.section} ${styles.heroLayout}`}>
+          <div className={styles.heroImageWrapper}>
+            <Image 
+              src="/asset/profile.jpeg" 
+              alt="Hemapriyan R K" 
+              width={250} 
+              height={250} 
+              style={{ width: "100%", height: "100%", objectFit: "cover" }} 
+              priority
+            />
+          </div>
+          <div>
+            <h1 style={{ fontSize: "3rem", marginBottom: "1rem" }}>HEMAPRIYAN R K</h1>
+            <p style={{ margin: 0, fontWeight: "bold", fontSize: "1.2rem", color: "var(--foreground)", opacity: 0.8 }}>Student at Vellore Institute of Technology</p>
+            <p style={{ margin: "0.5rem 0 2rem 0", opacity: 0.7 }}>Computer Science and Engineering (Data Science)</p>
+            <div style={{ display: "flex", gap: "1.5rem", flexWrap: "wrap", marginTop: "1rem" }}>
+              <a href="https://www.linkedin.com/in/hemapriyan-rk" target="_blank" rel="noopener noreferrer" style={{ textDecoration: "underline", textUnderlineOffset: "6px" }}>LinkedIn</a>
+              <a href="https://github.com/hemapriyan-rk" target="_blank" rel="noopener noreferrer" style={{ textDecoration: "underline", textUnderlineOffset: "6px" }}>GitHub</a>
+              <a href="mailto:hemapriyankuppusamy07@gmail.com" style={{ textDecoration: "underline", textUnderlineOffset: "6px" }}>Email</a>
             </div>
           </div>
+        </header>
 
-          {/* Info Section */}
-          <div className="flex flex-col justify-center h-full">
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-black mb-4 tracking-tight">
-              HEMAPRIYAN R K
-            </h1>
-            <p className="text-xl md:text-2xl font-medium text-red-500 mb-2">
-              Student at Vellore Institute of Technology
-            </p>
-            <p className="text-lg text-white/70 mb-8">
-              Computer Science and Engineering (Data Science)
-            </p>
-
-            <div className="flex flex-wrap gap-4 mb-12">
-              <a 
-                href="https://www.linkedin.com/in/hemapriyan-rk" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="flex items-center gap-2 px-4 py-2 rounded-full bg-white/5 border border-white/10 hover:bg-white/10 hover:border-white/20 transition-all text-sm font-medium"
-              >
-                <Link2 size={16} />
-                LinkedIn
-              </a>
-              <a 
-                href="https://github.com/hemapriyan-rk" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="flex items-center gap-2 px-4 py-2 rounded-full bg-white/5 border border-white/10 hover:bg-white/10 hover:border-white/20 transition-all text-sm font-medium"
-              >
-                <Code size={16} />
-                GitHub
-              </a>
-              <a 
-                href="mailto:hemapriyankuppusamy07@gmail.com" 
-                className="flex items-center gap-2 px-4 py-2 rounded-full bg-white/5 border border-white/10 hover:bg-white/10 hover:border-white/20 transition-all text-sm font-medium"
-              >
-                <Mail size={16} />
-                Email
-              </a>
-            </div>
-
-            <div className="space-y-4">
-              <h2 className="text-xl font-bold uppercase tracking-wider text-white/90 border-b border-white/10 pb-4">
-                Skills & Technologies
-              </h2>
-              <div className="flex flex-wrap gap-2 pt-2">
-                {skills.map((skill) => (
-                  <span 
-                    key={skill} 
-                    className="px-3 py-1.5 bg-zinc-900 border border-white/5 rounded-md text-sm text-white/80 hover:text-red-400 hover:border-red-500/30 transition-colors cursor-default"
-                  >
-                    {skill}
-                  </span>
-                ))}
-              </div>
-            </div>
+        {/* Skills Section */}
+        <section className={styles.section}>
+          <h2 className={styles.sectionTitle}>Skills & Technologies</h2>
+          <div style={{ display: "flex", flexWrap: "wrap", gap: "0.75rem" }}>
+            {skills.map(skill => (
+              <span key={skill} className={styles.skillBadge}>
+                {skill}
+              </span>
+            ))}
           </div>
-        </div>
+        </section>
+
+        <footer style={{ textAlign: "center", padding: "2rem 0", borderTop: "1px solid var(--card-border)", fontSize: "0.9rem", opacity: 0.7 }}>
+          <p>© 2026 Hemapriyan R K. All rights reserved.</p>
+        </footer>
       </div>
     </div>
   );
