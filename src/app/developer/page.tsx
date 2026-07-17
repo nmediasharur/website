@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowLeft, Github, Linkedin, Mail } from "lucide-react";
+import { ArrowLeft, Code, Link2, Mail } from "lucide-react";
 
 export default function DeveloperPage() {
   const skills = [
@@ -55,7 +55,7 @@ export default function DeveloperPage() {
                 rel="noopener noreferrer"
                 className="flex items-center gap-2 px-4 py-2 rounded-full bg-white/5 border border-white/10 hover:bg-white/10 hover:border-white/20 transition-all text-sm font-medium"
               >
-                <Linkedin size={16} />
+                <Link2 size={16} />
                 LinkedIn
               </a>
               <a 
@@ -64,7 +64,7 @@ export default function DeveloperPage() {
                 rel="noopener noreferrer"
                 className="flex items-center gap-2 px-4 py-2 rounded-full bg-white/5 border border-white/10 hover:bg-white/10 hover:border-white/20 transition-all text-sm font-medium"
               >
-                <Github size={16} />
+                <Code size={16} />
                 GitHub
               </a>
               <a 
