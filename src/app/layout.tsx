@@ -14,16 +14,20 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://nmedia.vercel.app"),
-  title: "N MEDIA | Scale. Convert. Dominate.",
-  description: "Digital marketing systems built for brands that want growth, not vanity. We specialize in Social Media Management, Paid Ads, SEO, and Content Production.",
+  title: "Website Temporarily Unavailable | N MEDIA",
+  description: "This website is temporarily unavailable while we review and update the current development and service requirements.",
+  robots: {
+    index: false,
+    follow: false,
+  },
   openGraph: {
-    title: "N MEDIA | Digital Marketing Agency",
-    description: "Digital marketing systems built for brands that want growth, not vanity.",
+    title: "Website Temporarily Unavailable | N MEDIA",
+    description: "This website is temporarily unavailable while we review and update the current development and service requirements.",
     url: "https://nmedia.vercel.app",
     siteName: "N MEDIA",
     images: [
       {
-        url: "/asset/8ba73fe2-1f33-4ec1-961b-218c5fd95f0f.png",
+        url: "/asset/logo-updated.png",
         width: 1200,
         height: 630,
       },
