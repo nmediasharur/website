@@ -27,7 +27,7 @@ export const metadata: Metadata = {
     siteName: "N MEDIA",
     images: [
       {
-        url: "/asset/logo-updated.png",
+        url: "/asset/logo-official.png",
         width: 1200,
         height: 630,
       },
